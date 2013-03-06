@@ -1,0 +1,13 @@
+This was an academic project. The goal was to build a HTTP/1.0 compliant server.
+
+The server is largely complete, however it does lack a couple things. Primarily,
+there is a problem with executing CGI scripts. As it is, it will execute the
+script, but will not pass the query string. This simply needs some adjustment
+with the way execve() is being used and I haven't gotten around to it.
+
+There are a few other things I would still like to implement:
+
+ - small error library that will return 502 to the client if there is a problem
+ - POST support (currently only GET and HEAD are supported)
+ - magic file support - this would really make it fully functional although I
+   have not been able to find a simple way to do this.
